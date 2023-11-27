@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #262E2A !important;
+    font-family: 'IBM Plex Sans Condensed', sans-serif !important;
+    background-color: var(--bs-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+header {
+    padding-left: 3.5vw; 
+    padding-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header nav {
+    display: inline-block;
+}
+
+header nav a {
+    margin-right: 60px; 
+    text-decoration: none;
+    color: white;
+}
+
+header nav a:hover{
+    font-weight: 600;
+}
+
+header nav a[href="#loginpage"] {
+    margin-right: 0;
+    width: 700px !important;
+}
+
+.custombutton { 
+    width: 140px;
+    height: 55px;
+    border-radius: 15px;
+    background-color: #CDCDCD;
+    color: #142018;
+    font-weight: 600;
+    box-shadow: none;
+    border: 0;
+    
+}
+
+.custombutton:hover{
+    width: 140px;
+    height: 55px;
+    border-radius: 15px;
+    background-color: #b1b1b1;
+    color: #142018;
+    font-weight: 300;
+    box-shadow: none;
+}
+
+.full-width-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Ensure the gradient overlay doesn't overflow */
+    display: flex;
+}
+
+.full-width-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(38, 46, 42, 1), rgba(0, 0, 0, 0));
+}
+
+.backgroundimage{
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(7.5px);
+    flex-shrink: 0;
+}
+h1 {
+    color: rgba(215, 215, 215, 1);
+    font-family:'IBM Plex Sans Condensed', sans-serif;
+    font-size: 2vw; 
+    white-space: nowrap;
+    font-weight: 200;
+}
+
+.hg1{
+    z-index: 2;
+    top: 11%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.hg2 {
+    margin-top: -37%;
+    margin-left: 7%;
+}
+.hg3{
+    margin: 0 auto;
+    margin-top: 1%;
+}
+
+h2{
+    color: rgba(215, 215, 215, 1);
+    font-family:'IBM Plex Sans Condensed', sans-serif;
+    font-size: 0.8vw;
+    letter-spacing: 1.0001px;
+    font-weight: 100;
+    line-height: 2.5vh;
+}
+p {
+    color: rgba(215, 215, 215, 1);
+    font-family:'IBM Plex Sans Condensed', sans-serif;
+    font-size: 1.3vw; 
+    word-spacing: 0.2em;
+    white-space: normal;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+.p1{
+    position: absolute;
+    text-align: center; top: 50%;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Set a maximum width if necessary */
+    z-index: 2;
+    width: 90%;
+}
+
+.p2 {
+    position: absolute;
+    margin-left: 3.5%;
+    margin-top: 5%;
+}
+
+.p3{
+    margin: 0 auto;
+    margin-top: 1%;
+}
+
+
+
+.container1 {
+    display: flex;
+    overflow: hidden;
+    margin: 10vh auto; 
+    width: 90vw;
+    background-color: #323A36;
+    padding: 0;
+    border-radius: 5px;
+  }
+
+  /* Define the styles for the text column */
+  .text-column {
+    flex: 0 0 53%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+  /* Define the styles for the photo column */
+  .photo-column {
+    flex: 0 0 47%; /* 40% width, don't grow or shrink */
+    box-sizing: border-box;
+  }
+
+
+  .photo-column img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space under the image */
+  }
+
+
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 46vh;
+}
+
+.custombutton-container {
+    position: relative;
+    width: 100%;
+    height: 50%; /* Adjust the height as needed */
+    margin-top: 0.1vh;
+    
+}
+
+.payaane{
+    font-family: 'IBM Plex Mono';
+    letter-spacing: 2px;
+
+}
+
+.container3{
+    background-color: #1E1E1E;
+    margin-top: 5vh;
+    padding: 8vh 20vh 5vh 10vh;
+}
+
+.two-column-container {
+    display: flex;
+    max-width: 30vw;
+    margin: 0 auto;
+    margin-left: 0;
+    margin-top: 1vw;
+}
+
+/* Optional: Add some styling for better readability */
+.column {
+    flex: 1;
+    margin-right: 1em;
+}
+
+h2 a {
+    color: rgba(215, 215, 215, 1);
+    text-decoration: none; /* Remove the default underline */
+    /* Additional styling if needed */
+}
+
+h2 a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    /* Additional styling for hover state if needed */
+}
