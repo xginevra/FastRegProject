@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,18 +20,19 @@
         <h2 class="hg5">Already have an acount? <a href="loginpage.html" style="color: #2D9CDA;">Login</a></h2>
     </div>
     <div class="two-column-container" style="margin-left: 3.5vw;">
+    <form action="insert.php" method="POST">
         <div class="leftsideofregister">
             <div class="two-column-container" style="margin-top: 0;">
                 <div class="formcolumn">
                     <div>
                         <div class="labelline">FIRST NAME</div>
-                        <input class="name" type="text" required="required" placeholder="Max">
+                        <input class="name" type="text" name="u_first_name" required="required" placeholder="Max">
                     </div>
                 </div>
                 <div class="formcolumn">
                     <div>
                         <div class="labelline">LAST NAME</div>
-                        <input class="name" type="text" required="required" placeholder="Mustermann">
+                        <input class="name" type="text" name="u_last_name" required="required" placeholder="Mustermann">
                     </div>
                 </div>
             </div>
@@ -43,14 +46,20 @@
             </div>
             <div class="formcolumn">
                 <div>
+                    <div class="labelline">USERNAME</div>
+                    <input class="rest" type="text" name="u_username" required="required" placeholder="m.muster">
+                </div>
+            </div>
+            <div class="formcolumn">
+                <div>
                     <div class="labelline">EMAIL ADDRESS</div>
-                    <input class="rest" type="text" required="required" placeholder="max.mustermann@email.com">
+                    <input class="rest" type="text" name="u_email_address" required="required" placeholder="max.mustermann@email.com">
                 </div>
             </div>
             <div class="formcolumn">
                 <div>
                     <div class="labelline">PASSWORD</div>
-                    <input class="rest" type="password" required="required" placeholder="●●●●●●●●●●●">
+                    <input class="rest" type="password" name="u_password" required="required" placeholder="●●●●●●●●●●●">
                 </div>
             </div>
             <div class="formcolumn">
@@ -60,7 +69,8 @@
                 </div>
             </div>
             <div class="formcolumn">
-                <a href="#about"><button type="button" class="custombutton" style="width: 206px; height: 55px; margin-left: 9vw; margin-top: 3vh;">REGISTER</button></a>
+                <button type="submit" formaction="insert.php" class="custombutton" style="width: 206px; height: 55px; margin-left: 9vw; margin-top: 3vh;">REGISTER</button>
+            </form>
             </div>
             </div>
         <div class="column">

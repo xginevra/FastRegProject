@@ -24,7 +24,7 @@ if (isset($_POST['u_username']) && isset($_POST['u_password'])) :
     // Hash the password
     $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
     # SQL query for Inserting the Form Data into the users table.
-    $sql = "INSERT INTO `doctors` (`username`, `password`, `email_address`, `first_name`, `last_name`, `institution`) VALUES ('$username', '$hashedpassword', '$first_name', '$last_name', '$institution', '$email_address')";
+    $sql = "INSERT INTO `doctors` (`username`, `password`, `first_name`, `last_name`, `institution`, `email_address`) VALUES ('$username', '$hashedpassword', '$first_name', '$last_name', '$institution', '$email_address')";
 
     # Executing the Above SQL query.
     $query = mysqli_query($db_conn, $sql);
