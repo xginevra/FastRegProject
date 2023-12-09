@@ -6,6 +6,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesdraft.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Get Started!</title>
     <script defer src="script.js"></script>
 </head>
@@ -37,7 +38,7 @@ session_start();
                 </div>
             </div>
             <div class="entryarea2">
-            <div class="labelline">INSTITUTION</div>
+
             <div class="formcolumn">
                 <div>
                     <div class="labelline">INSTITUTION</div>
@@ -60,13 +61,20 @@ session_start();
             <div class="formcolumn">
                 <div>
                     <div class="labelline">PASSWORD</div>
-                    <input class="rest" type="password" name="u_password" required="required" placeholder="●●●●●●●●●●●">
-                </div>
-            </div>
-            <div class="formcolumn">
-                <div>
-                    <div class="labelline">REPEAT PASSWORD</div>
-                    <input class="rest" type="password" required="required" placeholder="●●●●●●●●●●●">
+                <div class="password-input-box">
+                        <input class="rest" type="password" name="u_password" required="required" placeholder="Choose a password" style="padding-right: 45px;">
+                        <i class="fa-solid fa-eye show-password" style="color: #4f4f4f;"></i>
+                </div></div>
+                    <div class="password-checklist">
+                        
+                        <ul class="checklist">
+                            <h3 class="pass-checklist">Password must:</h3>
+                            <li class="list-item">be at least 8 characters long</li>
+                            <li class="list-item">include both Lower and Upper case letters</li>
+                            <li class="list-item">include Numbers</li>
+                            <li class="list-item">include Symbols</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="formcolumn">

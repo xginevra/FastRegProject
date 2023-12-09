@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
+
 * {
     box-sizing: border-box;
     font-family:'IBM Plex Sans Condensed', sans-serif;
@@ -289,6 +290,11 @@ input{
     margin-top: 3vh;
 }
 
+.pass-checklist{
+    color: #828282;
+    font-size: 0.75vw;
+}
+
 .plus{
     color:#00A72F;
     font-size: 60vh;
@@ -354,4 +360,60 @@ select.inputboxname:focus {
   
 select:hover{
     box-shadow: rgba(0, 0, 0, 0);
+}
+
+.password-input-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+}
+
+.password {
+    flex: 1;
+    background-color: #181818;
+    border: solid 1.5px #585858;
+    color: #D7D7D7;
+    padding-left: 15px;
+    border-radius: 10px;
+    height: 45px;
+    font-style: italic;
+    width: 456px;
+
+}
+
+.fa-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4f4f4f;
+    cursor: pointer;
+}
+
+.show-pass{
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+}
+
+.password-checklist{
+    margin-left: 3.3vw;
+    margin-top: 1vh;
+}
+
+.checklist{
+    list-style:none;
+}
+
+.list-item{
+    color: #828282;
+    font-size: 0.75vw;
+}
+
+.list-item::before{
+    content: '';
 }
