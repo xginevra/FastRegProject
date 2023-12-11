@@ -362,11 +362,19 @@ select:hover{
     box-shadow: rgba(0, 0, 0, 0);
 }
 
+.password-input{
+    width: 100%;
+    height: 100%;
+    padding-right: 45px;
+}
+
+
 .password-input-box {
     display: flex;
     align-items: center;
     position: relative;
-    height: 40px;
+    height: 45px;
+    width: 512px;
 }
 
 .password {
@@ -391,7 +399,16 @@ select:hover{
     cursor: pointer;
 }
 
-.show-pass{
+.fa-eye-slash {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4f4f4f;
+    cursor: pointer;
+}
+
+.show-password{
     position: absolute;
     cursor: pointer;
     top: 50%;
@@ -401,19 +418,48 @@ select:hover{
 }
 
 .password-checklist{
-    margin-left: 3.3vw;
-    margin-top: 1vh;
+    top: cal(100% + 10px);
+    width: 100%;
+    padding: 10px 20px;
+    margin-left: 2.5vw;
+}
+
+.checklist-title{
+    color: #828282;
+    font-weight: 400;
+    font-size: 0.8vw;
 }
 
 .checklist{
     list-style:none;
+
 }
 
 .list-item{
     color: #828282;
-    font-size: 0.75vw;
+    font-size: 0.75vw; 
+    margin-left: 20px;
 }
 
 .list-item::before{
-    content: '';
+    content: '\f00d';
+    font-family: FontAwesome;
+    margin-right: 8px;
+    margin-left: -20px;
+    display: inline-block;
+    font-size: 0.6vw;
+}
+
+.list-item.checked{
+    opacity: 0.5;
+}
+
+.list-item.checked::before{
+    content: '\f00c';
+    font-family: FontAwesome;
+    margin-right: 8px;
+    margin-left: -30px;
+    display: inline-block;
+    font-size: 0.6vw;
+    color: #00A72F;
 }
