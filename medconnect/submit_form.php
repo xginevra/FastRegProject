@@ -46,7 +46,7 @@ if (isset($_POST['name']) && isset($_POST['city'])) :
     if ($query) {
         echo 'Patient data successfully inserted. <a href="patient_data.html">See patient data</a> or <a href="loggedin.php">Go back to profile</a>';
     } else {
-        echo "Failed to insert new data. <a href="new_patient.html">New try?</a>";
+        echo "Failed to insert new data. <a href='new_patient.html'>New try?</a>";
     }
     }
     exit;
