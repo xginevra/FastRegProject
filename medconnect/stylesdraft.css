@@ -186,7 +186,10 @@ p {
     margin-top: 1%;
 }
 
-
+.container {
+    color: rgba(215, 215, 215, 1);
+    text-align: center;
+}
 
 .container1 {
     display: flex;
