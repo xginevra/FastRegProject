@@ -2,7 +2,7 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
+// i need to see how i can put the checkbox values into the db
 
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
