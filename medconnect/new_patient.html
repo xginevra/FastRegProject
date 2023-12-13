@@ -7,92 +7,78 @@
     <title>New Patient Form</title>
 </head>
 <body>
-    <header>
-        <a href="index.html" >
-            <object data="Logo.svg" height="20vh" style="margin-top: 5vh; margin-left: 6vh;"> </object>
+<header>
+    <a href="index.html">
+        <object data="Logo.svg" height="20vh" style="margin-top: 5vh; margin-left: 6vh;"> </object>
+    </a>
+    <!--pages are yet to be created-->
+    <nav>
+        <a href="stillnopage.html" class="navbtn">My Profile</a>
+        <a href="contact.html" class="navbtn">My Patients</a>
+
+        <a href="loginpage.html">
+            <button type="button" class="custombutton">LOG OUT</button>
         </a>
-        <!--pages are yet to be created-->
-        <nav>
-            <a href="stillnopage.html" class="navbtn">My Profile</a>
-            <a href="contact.html" class="navbtn">My Patients</a>
-            
-            <a href="loginpage.html">
-              <button type="button" class="custombutton">LOG OUT</button>
-            </a>
-        </nav> 
-    </header>
+    </nav>
+</header>
 
-    <h2 class="h2">New Patient Form</h2>
+<h2 class="h2">New Patient Form</h2>
 
-    
+<form class="form" action="submit_form.php" method="post">
 
-    <form class="form" action="submit_form.php" method="post">
+    <label for="name">Name:</label>
+    <input class="input1" type="text" id="name" name="name" required><br>
 
-        <label for="name">Name:</label>
-        <input class=".input1" type="text" id="name" name="name" required><br>
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
 
-        <form>
-            <p>Gender:</p>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label><br>
-            
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-            
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label><br>
-          </form>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
 
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
 
-        <!-- Gender 
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select>
-    -->
-        <br>
-        <br>
+    <br>
+    <br>
 
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required><br>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br>
 
-        <label for="zipcode">Zipcode:</label>
-        <input type="text" id="zipcode" name="zipcode" required><br>
+    <label for="zipcode">Zipcode:</label>
+    <input type="text" id="zipcode" name="zipcode" required><br>
 
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required><br>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required><br>
 
-        <br>
+    <br>
 
-        <label for="prevDiseases">Known Previous Diseases:</label>
-        <textarea id="prevDiseases" name="prevDiseases"></textarea><br>
+    <label for="prevDiseases">Known Previous Diseases:</label>
+    <textarea id="prevDiseases" name="prevDiseases"></textarea><br>
 
-        <br>
+    <br>
 
-        <label>Known Allergies:</label><br>
-        <input type="checkbox" id="allergy1" name="allergies" value="Peanuts">
-        <label for="allergy1">Peanuts</label><br>
+    <label>Known Allergies:</label><br>
+    <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts">
+    <label for="allergy1">Peanuts</label><br>
 
-        <input type="checkbox" id="allergy2" name="allergies" value="Shellfish">
-        <label for="allergy2">Shellfish</label><br>
+    <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish">
+    <label for="allergy2">Shellfish</label><br>
 
-        <input type="checkbox" id="allergy3" name="allergies" value="Pollen">
-        <label for="allergy3">Pollen</label><br>
+    <input type="checkbox" id="allergy3" name="allergies[]" value="Pollen">
+    <label for="allergy3">Pollen</label><br>
 
-        <input type="checkbox" id="allergy3" name="allergies" value="No known allergy">
-        <label for="allergy3">No known allergy</label><br>
-        <!-- Add more checkboxes as needed -->
+    <input type="checkbox" id="allergy4" name="allergies[]" value="No known allergy">
+    <label for="allergy4">No known allergy</label><br>
+    <!-- Add more checkboxes as needed -->
 
-        <br>
-        
+    <br>
 
-        <input type="submit" name="submit_it" value="Submit">
-    </form>
+    <input type="submit" name="submit_it" value="Submit">
+</form>
 
 </body>
 </html>

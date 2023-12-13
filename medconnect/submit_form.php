@@ -2,7 +2,13 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-// i need to see how i can put the checkbox values into the db
+
+//comment out whatever you dont need
+//$DATABASE_HOST = 'rdbms.strato.de';
+//$DATABASE_USER = 'dbu123640';
+//$DATABASE_PASS = 'MouzHIwS23/24paN';
+//$DATABASE_NAME = 'dbs12338865';
+
 
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
@@ -12,50 +18,56 @@ $DATABASE_NAME = 'medconnect';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if (mysqli_connect_errno()) {
-    // If there is an error with the connection, stop the script and display the error.
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
 // Check if the user is logged in (adjust this condition based on your actual session logic)
+if (!isset($_SESSION['loggedin'])) {
+    echo 'User not logged in. <a href="./index.html">Go Home</a>';
+    exit();
+}
 
-if (isset($_POST['submit'])) {
-        // Assigning user data to variables for easy access later.
-        $patient_name = $_POST['name'];
-        $gender = $_POST['gender'];
-        $address = $_POST['address'];
-        $zipcode = $_POST['zipcode'];
-        $city = $_POST['city'];
-        $phone = $_POST['phone'];
-        $prevDiseases = $_POST['prevDiseases'];
+if (isset($_POST['submit_it'])) {
 
-        // Check if allergies are set in the form
-        if (isset($_POST['allergies'])) {
-            // Sanitize and implode the checked allergies into a comma-separated string
-            $allergies = implode(",", array_map(function($item) use ($con) {
-                return mysqli_real_escape_string($con, $item);
-            }, $_POST['allergies']));
-        } else {
-            $allergies = ''; // No allergies selected
-        }
+    // Add this line for debugging
+    error_log("POST data: " . print_r($_POST, true));
 
-        // SQL query for Inserting the Form Data into the patients table.
-        $sql = "INSERT INTO `patients` (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`) VALUES ('$patient_name', '$gender', '$address', '$zipcode', '$city', '$phone', '$prevDiseases', '$allergies')";
+    $patient_name = $_POST['name'];
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+    $address = $_POST['address'];
+    $zipcode = $_POST['zipcode'];
+    $city = $_POST['city'];
+    $phone = $_POST['phone'];
+    $prevDiseases = $_POST['prevDiseases'];
+    $allergies = '';
 
-        // Executing the SQL query.
-        $query = mysqli_query($con, $sql);
-
-        // Check if the query executed successfully
-        if ($query) {
-            echo 'Patient data successfully inserted. <a href="patient_data.html">See patient data</a> or <a href="loggedin.php">Go back to profile</a>';
-        } else {
-            echo 'Failed to insert new data. <a href="new_patient.html">New try?</a>';
-        }
-    } else {
-        echo 'Submit parameter not set.';
+    // Check if allergies are set in the form
+    if (isset($_POST['allergies'])) {
+        $allergies = implode(',', $_POST['allergies']);
     }
- //else {
-    //echo 'User not logged in. <a href="./index.html">Go Home</a>';
-//}
+
+    // Use prepared statements for security
+    $sql = "INSERT INTO `patients` (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $con->prepare($sql);
+
+    // Bind parameters
+    $stmt->bind_param("ssssssss", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $allergies);
+
+    // Execute the statement
+    $stmt->execute();
+
+    // Check if the query executed successfully
+    if ($stmt->affected_rows > 0) {
+        echo 'Patient data successfully inserted. <a href="patient_data.html">See patient data</a> or <a href="loggedin.php">Go back to profile</a>';
+    } else {
+        echo 'Failed to insert new data. <a href="new_patient.html">New try?</a>';
+    }
+
+    // Close the prepared statement
+    $stmt->close();
+} else {
+    echo 'Submit parameter not set.';
+}
 
 // Close the database connection
 mysqli_close($con);
