@@ -27,7 +27,7 @@ if (!isset($_SESSION['loggedin'])) {
         <l>
             <li><a href="logout.php">Logout</a></li><br />
             <li><a href="info.php">about us</a></li>
-            <li><a href="new_patient.html">New Patient</a></li>
+            <li><a href="new_patient.php">New Patient</a></li>
 
         </l>
     </div>
