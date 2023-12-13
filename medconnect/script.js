@@ -7,3 +7,5 @@ showPasswordBtn.addEventListener('click', () => {
 
     passwordInp.type = (passwordInp.type === 'password') ? 'text' : 'password';
 });
+
+

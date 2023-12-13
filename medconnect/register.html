@@ -21,63 +21,64 @@ session_start();
         <h2 class="hg5">Already have an acount? <a href="loginpage.html" style="color: #2D9CDA;">Login</a></h2>
     </div>
     <div class="two-column-container" style="margin-left: 3.5vw;">
-    <form action="insert.php" method="POST">
-        <div class="leftsideofregister">
-            <div class="two-column-container" style="margin-top: 0;">
-                <div class="formcolumn">
-                    <div>
-                        <div class="labelline">FIRST NAME</div>
-                        <input class="name" type="text" name="u_first_name" required="required" placeholder="Max">
+        <form action="insert.php" method="POST">
+            <div class="leftsideofregister">
+                <div class="two-column-container" style="margin-top: -15px;">
+                    <div class="formcolumn">
+                        <div>
+                            <div class="labelline">FIRST NAME</div>
+                            <input class="name" type="text" name="u_first_name" required="required" placeholder="Max">
+                        </div>
+                    </div>
+                    <div class="formcolumn">
+                        <div>
+                            <div class="labelline">LAST NAME</div>
+                            <input class="name" type="text" name="u_last_name" required="required" placeholder="Mustermann">
+                        </div>
                     </div>
                 </div>
                 <div class="formcolumn">
                     <div>
-                        <div class="labelline">LAST NAME</div>
-                        <input class="name" type="text" name="u_last_name" required="required" placeholder="Mustermann">
+                        <div class="labelline">INSTITUTION</div>
+                        <input class="rest" type="text" name="institution" required="required" placeholder="Klinikum München">
                     </div>
                 </div>
-            </div>
-            <div class="entryarea2">
+                <div class="formcolumn">
+                    <div>
+                        <div class="labelline">PRACTICE LICENSE NUMBER</div>
+                        <input class="rest" type="text" name="u_username" required="required" placeholder="PA8888">
+                    </div>
+                </div>
+                <div class="formcolumn">
+                    <div>
+                        <div class="labelline">EMAIL ADDRESS</div>
+                        <input class="rest" type="text" name="u_email_address" required="required" placeholder="max.mustermann@email.com">
+                    </div>
+                </div>
+                <div class="formcolumn">
 
-            <div class="formcolumn">
-                <div>
-                    <div class="labelline">INSTITUTION</div>
-                    <input class="rest" type="text" name="institution" required="required" placeholder="Klinikum München">
-                </div>
-            </div>
-            </div>
-            <div class="formcolumn">
-                <div>
-                    <div class="labelline">USERNAME</div>
-                    <input class="rest" type="text" name="u_username" required="required" placeholder="m.muster">
-                </div>
-            </div>
-            <div class="formcolumn">
-                <div>
-                    <div class="labelline">EMAIL ADDRESS</div>
-                    <input class="rest" type="text" name="u_email_address" required="required" placeholder="max.mustermann@email.com">
-                </div>
-            </div>
-            <div class="formcolumn">
-                <div>
-                    <div class="labelline">PASSWORD</div>
-                <div class="password-input-box">
-                        <input  type="password" placeholder="Choose a password" class="password-input">
-                        <i class="fa-solid fa-eye show-password" style="color: #4f4f4f;"></i>
-                </div></div>
-                    <div class="password-checklist">
-                        <h3 class="checklist-title">Password must:</h3>
-                        <ul class="checklist">
-                            <li class="list-item">be at least 8 characters long</li>
-                            <li class="list-item">include both Lower and Upper case letters</li>
-                            <li class="list-item">include Numbers</li>
-                            <li class="list-item">include Symbols</li>
-                        </ul>
+                        <div class="labelline">PASSWORD</div>
+                        <div class="password-input-box">
+                            <input  type="password" placeholder="Choose a password" class="password-input">
+                            <i class="fa-solid fa-eye show-password" style="color: #4f4f4f;"></i>
+                        </div>
+
+                    <div>
+                        <div class="password-checklist">
+                            <h3 class="checklist-title">Password must:</h3>
+                            <ul class="checklist">
+                                <li class="list-item">be at least 8 characters long</li>
+                                <li class="list-item">include both Lower and Upper case letters</li>
+                                <li class="list-item">include Numbers</li>
+                                <li class="list-item">include Symbols</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="formcolumn">
-                <button type="submit" formaction="insert.php" class="custombutton" style="width: 206px; height: 55px; margin-left: 9vw; margin-top: 3vh;">REGISTER</button>
+                <button type="submit" formaction="insert.php" class="custombutton" style="width: 206px; height: 55px; margin-left: 9vw; margin-top: 1vh;">REGISTER</button>
+                <p class="accepting">By signing up, you agree to MEDCONNECTS <a href="terms.html" style="color: #2D9CDA;">Terms</a>, data and <a href="privacypolicy.html" style="color: #2D9CDA;">Privacy Policy</a>.</p>
             </form>
             </div>
             </div>
@@ -89,7 +90,7 @@ session_start();
             <h2 style="margin-top: 10px;">Health records made easy.</h2>
             </div>
         </div>
-    </div>
+
 
 </body>
 </html>

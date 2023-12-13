@@ -428,12 +428,19 @@ select:hover{
 }
 
 .password-checklist{
-    top: cal(100% + 10px);
+    top: calc(100% + 10px);
     width: 100%;
     padding: 10px 20px;
     margin-left: 2.5vw;
+    margin-bottom: 5px;
+    padding-bottom: 0;
 }
 
+.accepting {
+    color: #b1b1b1;
+    font-size: 0.8vw;
+    margin-top: 10px;
+}
 .checklist-title{
     color: #828282;
     font-weight: 400;
