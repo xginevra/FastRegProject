@@ -476,3 +476,8 @@ select:hover{
     font-size: 0.6vw;
     color: #00A72F;
 }
+
+textarea {
+    width: 80%; /* Adjust the width as needed */
+    margin-top: 10px;
+}
