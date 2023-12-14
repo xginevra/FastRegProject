@@ -431,12 +431,20 @@ select:hover{
 }
 
 .password-checklist{
-    top: cal(100% + 10px);
+    top: calc(100% + 10px);
     width: 100%;
     padding: 10px 20px;
     margin-left: 2.5vw;
+    margin-bottom: 5px;
+    padding-bottom: 0;
 }
 
+.accepting {
+    color: #b1b1b1;
+    font-size: 0.6vw;
+    margin-top: 10px;
+    margin-left: 5vw;
+}
 .checklist-title{
     color: #828282;
     font-weight: 400;
@@ -471,8 +479,7 @@ select:hover{
     content: '\f00c';
     font-family: FontAwesome;
     margin-right: 8px;
-    margin-left: -30px;
-    display: inline-block;
+    margin-left: -20px;
     font-size: 0.6vw;
     color: #00A72F;
 }
