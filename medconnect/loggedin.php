@@ -26,8 +26,10 @@ if (!isset($_SESSION['loggedin'])) {
     <div id="menue-left">
         <l>
             <li><a href="logout.php">Logout</a></li><br />
-            <li><a href="info.php">about us</a></li>
-            <li><a href="new_patient.html">New Patient</a></li>
+            <li><a href="aboutus.php">about us</a></li>
+            <li><a href="new_patient.php">New Patient</a></li>
+            <li><a href="update_patient.html">Update patient data?</a></li>
+            <li><a href="show_patient.html">See registered patients?</a></li>
 
         </l>
     </div>

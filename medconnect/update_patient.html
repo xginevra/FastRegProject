@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesdraft.css">
+    <title>Update Patient</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" >
+            <object data="Logo.svg" height="20vh" style="margin-top: 5vh; margin-left: 6vh;"> </object>
+        </a>
+        <!--pages are yet to be created-->
+        <nav>
+            <a href="stillnopage.html" class="navbtn">My Profile</a>
+            <a href="contact.html" class="navbtn">My Patients</a>
+            
+            <a href="loginpage.html">
+              <button type="button" class="custombutton">LOG OUT</button>
+            </a>
+        </nav>
+    </header>
+
+    <h1 class="hg4">Update Patient Form</h1>
+
+    <form class="form" action="update_patientdata.php" method="post">
+        
+        <div class="formcolumn">
+        <label for="patients">Choose a patient:</label>
+        <select id="patients" name="patients">
+            <option value="patient1">Patient 1</option>
+            <option value="patient2">Patient 2</option>
+            <option value="patient3">Patient 3</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+
+        <div>
+        <label for="fileUpload">Upload files for patient:</label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .doc, .docx">
+            
+        <input type="submit" value="Submit">
+    </div>
+
+    <div>
+        <label for="signsSymptoms">Patient's signs and symptoms:</label>
+    <textarea class="textarea" id="signsSymptoms" name="signsSymptoms" rows="4" cols="40"
+    placeholder="Please enter the symptoms and signs that you as a doctor noticed"></textarea>
+    </div>
+
+    <div>
+        <label for="diagnosis">Patient's diagnosis:</label>
+        <textarea class="textarea" id="diagnosis" name="diagnosis" rows="2" cols="20" 
+        placeholder="Diagnosis (either ICD-10 or written)"></textarea>
+    </form>
+
+    <form class="form" action="update_patientdata.php" method="post">
+                
+        
+</body>
+</html>
