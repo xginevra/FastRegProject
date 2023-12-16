@@ -26,21 +26,26 @@
             <form action="authenticate.php" method="POST">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 50px;">
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                        <div >
+                        <div>
                             <div>
                                 <div class="labelline" style="margin-left: 0vw;">EMAIL ADDRESS</div>
                                 <input class="rest" type="text" name="u_email_address" required="required" placeholder="max.mustermann@email.com" style="margin-left: 0vw;">
                             </div>
                         </div>
                         <div>
-
+                            <div>
                                 <div class="labelline" style="margin-left: 0vw;">PASSWORD</div>
                                 <div>
                                     <input  type="password" placeholder="Password" class="rest" name="u_password" style="margin-left: 0vw; padding-right: 15px;">
                                     <i class="fa-solid fa-eye show-password" style="color: #4f4f4f;"></i>
                                 </div>
+                            </div>
+                            <div style="margin-top: 10px; align-self:right ;">
+                              <a href="resetpassword.html" class="accepting" style="color: #2D9CDA; font-size: 0.8vw; margin-left: 0vw; display: block; text-align: right;">Forgot password?</a>
+                            </div>
                         </div>
                     </div>
+
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
                         <button type="submit" class="custombutton" style="width: 206px; height: 55px; margin-top: 5vh; align-items: center;cursor: pointer;">Login</button>
                         <p class="accepting" style="margin-left: 0vw;">Don't have an account? <a href="register.html" style="color: #2D9CDA; font-size: 0.8vw;">Create new account</a></p>
