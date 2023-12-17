@@ -47,7 +47,7 @@ if (isset($_POST['submit_it'])) {
     }
 
     // Use prepared statements for security
-    $sql = "INSERT INTO `patients` (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO patients (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
 
     // Bind parameters
