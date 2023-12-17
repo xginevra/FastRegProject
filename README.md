@@ -1,4 +1,6 @@
 # project: Medconnect, some general information
+By Paniz, Paya, Ali, Franzi
+
 ---------
 
 First, all user-related pages should be a .php file in order to place the following snippet of code at the beginning:
