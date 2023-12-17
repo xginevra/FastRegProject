@@ -4,15 +4,12 @@
 /**
  * The follwing Condition checks whether a client requested the insert.php through
  * the POST method with the u_name, u_age, and u_email
- * 
- * u_name, u_age, and u_email - You can also see these in the HTML Form (index.html) -
- * These are keys to access the actual data provided by a user.
  */
 if (isset($_POST['u_username']) && isset($_POST['u_password'])) :
 
-    # Database Connection my_test_db is the Database name.
-    //$db_conn = mysqli_connect("localhost", "root", "", "medconnect");
-    $db_conn = mysqli_connect("rdbms.strato.de", "rootdbu123640", "MouzHIwS23/24paN", "medconnectdbs12338865");
+    # Database Connection
+    $db_conn = mysqli_connect("localhost", "root", "", "medconnect");
+    //$db_conn = mysqli_connect("rdbms.strato.de", "dbu123640", "MouzHIwS23/24paN", "dbs12338865");
 
 
     # Assigning user data to variables for easy access later.

@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +17,10 @@
     </a>
     <!--pages are yet to be created-->
     <nav>
-        <a href="stillnopage.html" class="navbtn">My Profile</a>
+        <a href="loggedin.php" class="navbtn">My Profile</a>
         <a href="contact.html" class="navbtn">My Patients</a>
 
-        <a href="loginpage.html">
+        <a href="logout.php">
             <button type="button" class="custombutton">LOG OUT</button>
         </a>
     </nav>
