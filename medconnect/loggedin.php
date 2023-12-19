@@ -35,7 +35,7 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
 
     <div id="content">
-    Welcome back, <?=$_SESSION['name']?>!<br>
+    Welcome back, <?=$_SESSION['doctor_name']?>!<br>
     What do you want to do now? <br>
     See your -> <a href="profile.php">Personal details</a>?
 

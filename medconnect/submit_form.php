@@ -3,17 +3,16 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-//comment out whatever you dont need
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'medconnect';
+
 //$DATABASE_HOST = 'rdbms.strato.de';
 //$DATABASE_USER = 'dbu123640';
 //$DATABASE_PASS = 'MouzHIwS23/24paN';
 //$DATABASE_NAME = 'dbs12338865';
 
-
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'medconnect';
 
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -21,8 +20,8 @@ if (mysqli_connect_errno()) {
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-// Check if the user is logged in (adjust this condition based on your actual session logic)
-if (!isset($_SESSION['loggedin'])) {
+// Check if the user is logged in as a doctor
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || !isset($_SESSION['doctor_id'])) {
     echo 'User not logged in. <a href="./index.html">Go Home</a>';
     exit();
 }
@@ -46,12 +45,15 @@ if (isset($_POST['submit_it'])) {
         $allergies = implode(',', $_POST['allergies']);
     }
 
+    // Retrieve doctor's information from the session
+    $doctor_id = $_SESSION['doctor_id'];
+
     // Use prepared statements for security
-    $sql = "INSERT INTO patients (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO patients (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`, `doctor_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
 
     // Bind parameters
-    $stmt->bind_param("ssssssss", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $allergies);
+    $stmt->bind_param("ssssssssi", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $allergies, $doctor_id);
 
     // Execute the statement
     $stmt->execute();
