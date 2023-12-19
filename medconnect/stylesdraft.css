@@ -541,3 +541,21 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.registerationsuccessful{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    top: 50%;
+    -ms-transform: translateY(50%);
+    transform: translateY(110%);
+}
+
+.registration{
+    font-size: 34px;
+}
+
+.successful{
+    color: #00A72F;
+}
