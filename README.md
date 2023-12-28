@@ -59,6 +59,6 @@ our loggedin.php, which is basically our "My Profile" should be designed -  Chec
 ----------------------
 
 ## Backend todo:
-- figure out how to update patient data in the same table
+- figure out how to update patient data in the same table - check! 
 - how to set the relationships (one doctor can have many patients, one patient has only one doctor); i want to make a patient only accessible for the doctor who created the patient's data (Datenschutz! :D) - Check!
 - how to save pictures and other files in a table (?)
