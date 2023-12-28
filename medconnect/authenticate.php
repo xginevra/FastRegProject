@@ -50,7 +50,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM doctors WHERE email_address 
             $_SESSION['loggedin'] = true;
             $_SESSION['doctor_id'] = $id; // Store doctor's ID
             $_SESSION['doctor_name'] = $_POST['email_address']; // Store doctor's name
-            header('Location: loggedin.php');
+            header('Location: loggedin-temperory.php');
             exit(); // Ensure no further code is executed after the redirect
 
         } else {
