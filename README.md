@@ -1,6 +1,8 @@
 # project: Medconnect, some general information
 By Paniz, Paya, Ali, Franzi
 
+pages "new_patient" and "update_patient" want to be redesigned, they are looking good but there is something missing - take a look at it either at strato or locally on your machine.
+
 ---------
 
 First, all user-related pages should be a .php file in order to place the following snippet of code at the beginning:
@@ -37,9 +39,9 @@ This is doctors:
 |   |   |   |   |   |   |   |
 
 This is patients:
-|  patient_id | patient_name  | gender  | address  | zipcode  | city  | phone  | prevDiseases  | allergies  |
-|---|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |   |
+|  patient_id | patient_name  | gender  | address  | zipcode  | city  | phone  | prevDiseases  | allergies  |  signsSymptoms |  diagnosis |  doctor_id | 
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |   |   |   |   |
 
 -------
 
@@ -50,12 +52,12 @@ however, for some reason at the register.html we used u_username and all the oth
 ### Our page looks amazing.
 but still, we have something to do:
 
-our loggedin.php, which is basically our "My Profile" should be designed
-also, pages "new_patient" and "update_patient" want to be redesigned, they are looking good but there is something missing - take a look at it either at strato or locally on your machine.
+our loggedin.php, which is basically our "My Profile" should be designed -  Check! Looks amazing. depends on what you want to further improve.
+
 
 ----------------------
 
 ## Backend todo:
 - figure out how to update patient data in the same table
-- how to set the relationships (one doctor can have many patients, one patient has only one doctor); i want to make a patient only accessible for the doctor who created the patient's data (Datenschutz! :D)
+- how to set the relationships (one doctor can have many patients, one patient has only one doctor); i want to make a patient only accessible for the doctor who created the patient's data (Datenschutz! :D) - Check!
 - how to save pictures and other files in a table (?)
