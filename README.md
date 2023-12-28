@@ -1,5 +1,5 @@
 # project: Medconnect, some general information 
-find us here: http://ecriprojects.medconnect.de
+find us here: http://medconnect.ecriprojects.de
 By Paniz, Paya, Ali, Franzi
 
 pages "new_patient" and "update_patient" want to be redesigned, they are looking good but there is something missing - take a look at it either at strato or locally on your machine.
