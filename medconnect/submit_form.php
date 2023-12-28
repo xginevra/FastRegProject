@@ -60,7 +60,7 @@ if (isset($_POST['submit_it'])) {
 
     // Check if the query executed successfully
     if ($stmt->affected_rows > 0) {
-        echo 'Patient data successfully inserted. <a href="patient_data.html">See patient data</a> or <a href="loggedin.php">Go back to profile</a>';
+        echo 'Patient data successfully inserted. <a href="loggedin-temperory.php">Go back to profile</a>';
     } else {
         echo 'Failed to insert new data. <a href="new_patient.html">New try?</a>';
     }
