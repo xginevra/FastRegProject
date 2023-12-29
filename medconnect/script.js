@@ -9,7 +9,7 @@ showPasswordBtn.addEventListener('click', () => {
     passwordInp.type = (passwordInp.type === 'password') ? 'text' : 'password';
 });
 
-// script.js
+// script.js for cookie settings
 
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();

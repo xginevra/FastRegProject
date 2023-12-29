@@ -25,17 +25,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 100px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-
-
 header {
     padding-left: 3.5vw; 
     padding-top: 3vh;
