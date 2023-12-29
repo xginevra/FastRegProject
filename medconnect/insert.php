@@ -30,7 +30,7 @@ if (isset($_POST['u_username']) && isset($_POST['u_password'])) :
 
     # Checks that the query executed successfully
     if ($query) {
-        echo 'You registered successfully. <a href="./loginpage.html">Login</a>';
+        Header("location: registration-successful.html");
     } else {
         echo "Failed to insert new data.";
     }

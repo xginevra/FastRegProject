@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/authenticate.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/insert.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/submit_form.php" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/../../../../../../../../xampp/htdocs/medconnect/submit_form.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/update_patientdata.php" dialect="MySQL" />
   </component>
 </project>
