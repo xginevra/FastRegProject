@@ -1,5 +1,6 @@
 # project: Medconnect, some general information 
-find us here: http://medconnect.ecriprojects.de
+find us here: http://medconnect.ecriprojects.de , <br>
+and here: https://xginevra.github.io/project/ <br>
 By Paniz, Paya, Ali, Franzi
 
 ## Don't forget pulling before working on some pages
