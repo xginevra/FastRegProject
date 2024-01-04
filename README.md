@@ -2,6 +2,8 @@
 find us here: http://medconnect.ecriprojects.de
 By Paniz, Paya, Ali, Franzi
 
+## Don't forget pulling before working on some pages
+
 pages "new_patient" and "update_patient" want to be redesigned, they are looking good but there is something missing - take a look at it either at strato or locally on your machine.
 
 ---------
