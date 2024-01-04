@@ -1,6 +1,7 @@
 # project: Medconnect, some general information 
 find us here: http://medconnect.ecriprojects.de , <br>
-and here: https://xginevra.github.io/project/ <br>
+and here: https://xginevra.github.io/project/ but it is not really working because of the missing database here :) <br>
+still prefer strato for this. <br>
 By Paniz, Paya, Ali, Franzi
 
 ## Don't forget pulling before working on some pages
