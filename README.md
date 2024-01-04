@@ -36,7 +36,8 @@ example: (fileUpload is a column for the patients table which is so far not ther
 <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .doc, .docx">
 
 ```
-So far, we have 2 tables: doctors and patients. the name in the table is going to be the name preferred for the inputs of the .html/.php files.
+So far, we have 2 tables: doctors and patients. the name in the table is going to be the name preferred for the inputs of the .html/.php files. <br>
+currently, "doctor_id" is a foreign key in the patients table - it originates from the doctors table's "id" which is the primary key there. they are linked so that each doctor can only see the patients they created. yay!
 
 This is doctors:
 |  id |  username | password  | email_address  | first_name  | last_name  | institution  |
