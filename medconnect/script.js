@@ -11,6 +11,7 @@ showPasswordBtn.addEventListener('click', () => {
 
 // script.js for cookie settings
 
+// Cookie Functions
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -18,42 +19,56 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+function getCookie(cname) {
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function acceptCookies() {
-    setCookie("cookieConsent", "accepted", 365);  // Cookie valid for 1 year
-    document.getElementById("cookie-banner").style.display = "none";  // Hide the banner
+    setCookie("cookieConsent", "accepted", 365);
+    document.getElementById("cookie-banner").style.display = "none";
 }
 
 function rejectCookies() {
-    setCookie("cookieConsent", "rejected", 365);  // Cookie valid for 1 year
-    document.getElementById("cookie-banner").style.display = "none";  // Hide the banner
-    // Optionally, you may want to handle additional actions for rejected cookies.
+    setCookie("cookieConsent", "rejected", 365);
+    document.getElementById("cookie-banner").style.display = "none";
 }
 
-// Check for existing cookie on page load
+// Check for Cookie on Every Page Load
 window.onload = function () {
-    const cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)cookieConsent\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    if (cookieValue === "accepted" || cookieValue === "rejected") {
+    const cookieConsent = getCookie("cookieConsent");
+    if (cookieConsent === "accepted" || cookieConsent === "rejected") {
         document.getElementById("cookie-banner").style.display = "none";
     }
-}
+};
 
+// Existing Password Validation
 let validationRegex = [
     { regex: /.{8,}/ },
     { regex: /[0-9]/ },
     { regex: /[a-z]/},
     { regex: /[A-Z]/},
     { regex: /[^A-Za-z0-9]/ } 
-]
+];
 
 passwordInp.addEventListener('keyup', () => {
-    validationRegex.forEach((item, i) => { // Fix the syntax for forEach
+    validationRegex.forEach((item, i) => {
         let isValid = item.regex.test(passwordInp.value);
 
-        if (isValid) { // Fix the case of isValid
-            // Do something with passwordChecklist[i], for example, add a class
+        if (isValid) {
             passwordChecklist[i].classList.add('checked');
         } else {
-            // Handle the case when the password is not valid, for example, remove a class
             passwordChecklist[i].classList.remove('checked');
         }
     });
