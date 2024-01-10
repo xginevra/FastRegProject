@@ -604,7 +604,73 @@ textarea {
     background-color: #476752;
   }
 
+  .form {
+    margin-left: 3.5vw;
+  }
 
+  .input2 {
+    background-color: #181818;
+    border-radius: 10px;
+    color: #cdcdcd;
+    margin-left: 3.2vw;
+    width: 456px;
+    height: 100px;
+    border-color: #4f4f4f;
+  }
+
+  #fileUpload {
+    display: inline-block;
+    background-color: #181818;
+    border-radius: 10px;
+    color: #cdcdcd;
+    margin-left: 3.2vw;
+    width: 30%;
+    height: 45px;
+    border: solid 1.5px #585858;
+    padding-left: 15px;
+    font-style: italic;
+    margin-top: 10px;
+    position: relative;
+}
+
+.customfile {
+    background-color: #181818;
+    border: solid 1.5px #585858;
+    color: #D7D7D7;
+    padding-left: 15px;
+    padding-top: 15px;
+    border-radius: 10px;
+    margin-left: 6vh;
+    height: 100px;
+    font-style: italic;
+    width: 456px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+
+.customfile::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+
+.customfile::before {
+    content: 'Upload File';
+    display: inline-block;
+    background-color: #CDCDCD;
+    color: #142018;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.customfile:hover::before {
+    background-color: #b1b1b1;
+    font-weight: 300;
+}
+  
 
 
   
