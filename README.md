@@ -6,7 +6,8 @@ By Paniz, Paya, Ali, Franzi
 
 ## Don't forget pulling before working on some pages
 
-pages "new_patient" and "update_patient" want to be redesigned, they are looking good but there is something missing - take a look at it either at strato or locally on your machine.
+page "update_patient" wants to be redesigned, they are looking good but there is something missing - take a look at it either at strato or locally on your machine.
+also, we are missing a proper show patient page - with a link to update the patient.
 
 ---------
 
