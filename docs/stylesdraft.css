@@ -574,9 +574,10 @@ textarea {
 
   
   #myTable {
-    width: 88%;
+    width: 60%;
+    height: 50px;
     border: 1px solid #585858;
-    font-size: 18px;
+    font-size: 14px;
     margin: auto;
     border-radius: 10px;
     background-color: #181818;
@@ -588,7 +589,7 @@ textarea {
 
   #myTable th, #myTable td {
     text-align: left;
-    padding: 12px;
+    padding: 10px;
   }
   
   #mytable tr.header {
