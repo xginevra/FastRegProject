@@ -54,7 +54,7 @@ if (isset($_POST['submit_it'])) {
     $stmt = $con->prepare($sql);
 
     // Bind parameters
-    $stmt->bind_param("ssssssssi", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $signsSymptoms, $allergies, $doctor_id);
+    $stmt->bind_param("sssssssssi", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $signsSymptoms, $allergies, $doctor_id);
 
     // Execute the statement
     $stmt->execute();
