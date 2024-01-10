@@ -14,7 +14,6 @@ session_start();
             <object data="Logo.svg" height="20vh" style="margin-top: 2vh; margin-left: 6vh; pointer-events: none;"> </object>
         </a>
         <nav>
-            <a href="loggedin-temperory.php" class="navbtn">DASHBOARD</a>
             <a href="loggedin-temperory.php" class="navbtn">PROFILE</a>
             <a href="logout.php" class="navbtn" style="margin-right: 13vh; margin-top: 5vh;">LOGOUT</a>
         </nav>
@@ -32,7 +31,7 @@ session_start();
 
         <div style="text-align: center; margin-top: 15px;">
             <a href="new_patient.html" >
-                <button type="button" class="custombutton" style="width: 88%; height: 8vh; font-size: 2vh;">+  NEW PATIENT</button>
+                <button type="button" class="custombutton" style="width: 44%; height: 8vh; font-size: 2vh;">+  NEW PATIENT</button>
             </a>
         </div>
     </div>

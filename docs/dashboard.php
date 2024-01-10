@@ -1,7 +1,6 @@
 <?php
 //session_start();
 
-// Change this to your connection info.
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -40,7 +39,7 @@ $result = $con->query($sql);
             echo "<tr>";
 //            echo "<td>" . $row['patient_id'] . "</td>";
             echo "<td>" . $row['patient_name'] . "</td>";
-//            echo "<td>" . $row['insurance_number'] . "</td>";
+            echo "<td>" . $row['city'] . "</td>";
 //            echo "<td>" . $row['dob'] . " - Age: " . calculateAge($row['dob']) . "</td>";
             echo "<td>" . $row['gender'] . "</td>";
             echo "</tr>";
