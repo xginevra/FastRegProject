@@ -8,10 +8,10 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'medconnect';
 
-//$DATABASE_HOST = 'rdbms.strato.de';
-//$DATABASE_USER = 'dbu123640';
-//$DATABASE_PASS = 'MouzHIwS23/24paN';
-//$DATABASE_NAME = 'dbs12338865';
+// $DATABASE_HOST = 'rdbms.strato.de';
+// $DATABASE_USER = 'dbu123640';
+// $DATABASE_PASS = 'MouzHIwS23/24paN';
+// $DATABASE_NAME = 'dbs12338865';
 
 
 // Try and connect using the info above.
@@ -39,6 +39,7 @@ if (isset($_POST['submit_it'])) {
     $phone = $_POST['phone'];
     $prevDiseases = $_POST['prevDiseases'];
     $allergies = '';
+    $signsSymptoms = $_POST['signsSymptoms']
 
     // Check if allergies are set in the form
     if (isset($_POST['allergies'])) {
@@ -49,11 +50,11 @@ if (isset($_POST['submit_it'])) {
     $doctor_id = $_SESSION['doctor_id'];
 
     // Use prepared statements for security
-    $sql = "INSERT INTO patients (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `allergies`, `doctor_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO patients (`patient_name`, `gender`, `address`, `zipcode`, `city`, `phone`, `prevDiseases`, `signsSymptoms`, `allergies`, `doctor_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
 
     // Bind parameters
-    $stmt->bind_param("ssssssssi", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $allergies, $doctor_id);
+    $stmt->bind_param("ssssssssi", $patient_name, $gender, $address, $zipcode, $city, $phone, $prevDiseases, $signsSymptoms, $allergies, $doctor_id);
 
     // Execute the statement
     $stmt->execute();
