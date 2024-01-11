@@ -19,74 +19,53 @@
     </header>
     
     <a href="loginpage.html">
-        <button type="button" class="custombutton" style="margin: 4vh 6.5vw; width: 300px; margin-bottom: 0;">UPDATE PATIENT INFO</button>
+        <button type="button" class="custombutton" style="margin: 4vh 6.5vw; width: 300px; margin-bottom: 0;">UPDATE PATIENT INFO</button> //!FRANZI I DONT KNOW WHAT THIS BUTTON SHOULD BE CONNECTED TO
       </a>
     
-    <form class="form" action="submit_form.php" method="post">
+    <div style="margin-left: 3.5vw; margin-bottom: 12vh;">
     
         <div>
             <div class="labelline">NAME</div>
-            <input class="input1" type="text" id="name" name="name" required="required" placeholder="Max Mustermann">
+            <p class="output">NAME FROM THE BACKEND</p>
         </div>
-    
         <div>
-        <div class="labelline">Gender</div>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male" style="color: #cdcdcd;">Male</label><br>
-    
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female" style="color: #cdcdcd;">Female</label><br>
-    
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other" style="color: #cdcdcd;">Other</label><br>
+            <div class="labelline">INSURANCE NUMBER</div>
+            <p class="output">INSURANCE NR. FROM THE BACKEND</p>
         </div>
-        <br>
-        <br>
+        <div class="labelline">Gender</div>
+        <p class="output">GENDER FROM THE BACKEND</p>
         <div>
             <div class="labelline">ADDRESS</div>
-            <input class="rest" type="text" id="address" name="address" required="required" placeholder="Maximilianstrasse 1">
+            <p class="output">ADDRESS FROM THE BACKEND</p>
         </div>
         <div>
             <div class="labelline">ZIPCODE</div>
-            <input class="rest" type="text" id="zipcode" name="zipcode" required="required" placeholder="80331">
+            <p class="output">ZIPCODE FROM THE BACKEND</p>
         </div>
         <div>
             <div class="labelline">CITY</div>
-            <input class="rest" type="text" id="city" name="city" required="required" placeholder="München">
+            <p class="output">CITY FROM THE BACKEND</p>
         </div>
         <div>
             <div class="labelline">PHONE NUMBER</div>
-            <input class="rest" type="tel" id="phone" name="phone" required="required" placeholder="0111111111">
+            <p class="output">PHONE NUMBER FROM THE BACKEND</p>
         </div>
         <div>
             <div class="labelline">Known Previous Diseases:</div>
-            <textarea class="input2" id="prevDiseases" name="prevDiseases"></textarea>
+            <p class="output" style="height: 180px; overflow: auto;">FROM THE BACKEND</p>
         </div>
         <div>
             <div class="labelline">Current Signs and Symptoms:</div>
-            <textarea class="input2" id="signsSymptoms" name="signsSymptoms"></textarea>
+            <p class="output" style="height: 180px; overflow: auto;">FROM THE BACKEND</p>
         </div>
     
         <div class="labelline">Known Allergies:</div>
-        <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts">
-        <label for="allergy1"  style="color: #cdcdcd;">Peanuts</label><br>
-    
-        <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish">
-        <label for="allergy2" style="color: #cdcdcd;">Shellfish</label><br>
-    
-        <input type="checkbox" id="allergy3" name="allergies[]" value="Pollen">
-        <label for="allergy3"  style="color: #cdcdcd;">Pollen</label><br>
-    
-        <input type="checkbox" id="allergy4" name="allergies[]" value="No known allergy">
-        <label for="allergy4"  style="color: #cdcdcd;">No known allergy</label><br>
+        <p class="output">ALLERGIES FROM THE BACKEND</p>
     
         <div>
-            <div class="labelline">Upload File</div>
-            <input class="customfile" type="file" id="file" name="file">
+            <div class="labelline">Files</div>
+            NO CLUE HOW THIS IS GONNA WORK
         </div>
-    
-        <input class="custombutton" type="submit" name="submit_it" value="SUBMIT" style="font-style: normal; padding-right: 15px; margin: 50px;">
-    </form>
-    
+    </div>
     </body>
 </html>
