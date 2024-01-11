@@ -38,6 +38,42 @@ if (isset($_POST['submit_it'])) {
     $signsSymptoms = $_POST['signsSymptoms'];
     $diagnosis = $_POST['diagnosis'];
 
+    // Handle file upload
+    if (isset($_FILES['imageUpload']) && $_FILES['imageUpload']['error'] == 0) {
+        $allowed = array('jpg' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif');
+        $file_name = $_FILES['imageUpload']['name'];
+        $file_type = $_FILES['imageUpload']['type'];
+        $file_size = $_FILES['imageUpload']['size'];
+
+        // Validate file extension
+        $ext = pathinfo($file_name, PATHINFO_EXTENSION);
+        if (!array_key_exists($ext, $allowed)) {
+            die("Error: Please select a valid file format.");
+        }
+
+        // Validate file size - 5MB maximum
+        $maxsize = 5 * 1024 * 1024;
+        if ($file_size > $maxsize) {
+            die("Error: File size is larger than the allowed limit.");
+        }
+
+        // Validate MIME type
+        if (in_array($file_type, $allowed)) {
+            // Check whether file exists before uploading it
+            if (file_exists("upload/" . $file_name)) {
+                echo $file_name . " is already exists.";
+            } else {
+                move_uploaded_file($_FILES['imageUpload']['tmp_name'], "upload/" . $file_name);
+                echo "Your file was uploaded successfully.";
+                // You can now store the file name or path in your database if required
+            } 
+        } else {
+            echo "Error: There was a problem uploading your file. Please try again."; 
+        }
+    } else {
+        echo "Error: " . $_FILES['imageUpload']['error'];
+    }
+
     // Use prepared statements for security
     $sql = "UPDATE patients SET 
             gender = ?,
