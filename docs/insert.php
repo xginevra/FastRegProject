@@ -8,8 +8,8 @@
 if (isset($_POST['u_username']) && isset($_POST['u_password'])) :
 
     # Database Connection
-    //$db_conn = mysqli_connect("localhost", "root", "", "medconnect");
-    $db_conn = mysqli_connect("rdbms.strato.de", "dbu123640", "MouzHIwS23/24paN", "dbs12338865");
+    $db_conn = mysqli_connect("localhost", "root", "", "medconnect");
+//     $db_conn = mysqli_connect("rdbms.strato.de", "dbu123640", "MouzHIwS23/24paN", "dbs12338865");
 
 
     # Assigning user data to variables for easy access later.
