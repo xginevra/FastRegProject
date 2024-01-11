@@ -8,43 +8,85 @@
 </head>
 <body>
     <header>
-        <a href="index.html" >
+        <a href="index.html">
             <object data="Logo.svg" height="20vh" style="margin-top: 5vh; margin-left: 6vh;"> </object>
         </a>
-        <!--pages are yet to be created-->
         <nav>
             <a href="loggedin-temperory.php" class="navbtn">My Profile</a>
             <a href="contact.html" class="navbtn">My Patients</a>
-            <a href="loginpage.html">
-              <button type="button" class="custombutton">LOG OUT</button>
-            </a>
+            <a href="logout.php" class="navbtn" style="margin-right: 13vh; margin-top: 5vh;">LOGOUT</a>
         </nav>
     </header>
-        
-
-    <div>
-        <label for="search">Search:</label>
-        <input type="text" id="search" name="search" oninput="filterOptions()">
-        <button type="submit">Search</button>
-    </div>
-
-    <script>
-        function filterOptions() {
-            var input = document.getElementById("search").value.toLowerCase();
-            var options = document.getElementById("patient").options;
-            
-            for (var i = 0; i < options.length; i++) {
-                var optionText = options[i].text.toLowerCase();
-                if (optionText.indexOf(input) > -1) {
-                    options[i].style.display = "";
-                } else {
-                    options[i].style.display = "none";
-                }
-            }
-        }
-    </script>
     
+    <a href="loginpage.html">
+        <button type="button" class="custombutton" style="margin: 4vh 6.5vw; width: 300px; margin-bottom: 0;">UPDATE PATIENT INFO</button>
+      </a>
+    
+    <form class="form" action="submit_form.php" method="post">
+    
+        <div>
+            <div class="labelline">NAME</div>
+            <input class="input1" type="text" id="name" name="name" required="required" placeholder="Max Mustermann">
+        </div>
+    
+        <div>
+        <div class="labelline">Gender</div>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" style="color: #cdcdcd;">Male</label><br>
+    
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" style="color: #cdcdcd;">Female</label><br>
+    
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other" style="color: #cdcdcd;">Other</label><br>
+        </div>
+        <br>
+        <br>
+        <div>
+            <div class="labelline">ADDRESS</div>
+            <input class="rest" type="text" id="address" name="address" required="required" placeholder="Maximilianstrasse 1">
+        </div>
+        <div>
+            <div class="labelline">ZIPCODE</div>
+            <input class="rest" type="text" id="zipcode" name="zipcode" required="required" placeholder="80331">
+        </div>
+        <div>
+            <div class="labelline">CITY</div>
+            <input class="rest" type="text" id="city" name="city" required="required" placeholder="München">
+        </div>
+        <div>
+            <div class="labelline">PHONE NUMBER</div>
+            <input class="rest" type="tel" id="phone" name="phone" required="required" placeholder="0111111111">
+        </div>
+        <div>
+            <div class="labelline">Known Previous Diseases:</div>
+            <textarea class="input2" id="prevDiseases" name="prevDiseases"></textarea>
+        </div>
+        <div>
+            <div class="labelline">Current Signs and Symptoms:</div>
+            <textarea class="input2" id="signsSymptoms" name="signsSymptoms"></textarea>
+        </div>
+    
+        <div class="labelline">Known Allergies:</div>
+        <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts">
+        <label for="allergy1"  style="color: #cdcdcd;">Peanuts</label><br>
+    
+        <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish">
+        <label for="allergy2" style="color: #cdcdcd;">Shellfish</label><br>
+    
+        <input type="checkbox" id="allergy3" name="allergies[]" value="Pollen">
+        <label for="allergy3"  style="color: #cdcdcd;">Pollen</label><br>
+    
+        <input type="checkbox" id="allergy4" name="allergies[]" value="No known allergy">
+        <label for="allergy4"  style="color: #cdcdcd;">No known allergy</label><br>
+    
+        <div>
+            <div class="labelline">Upload File</div>
+            <input class="customfile" type="file" id="file" name="file">
+        </div>
+    
+        <input class="custombutton" type="submit" name="submit_it" value="SUBMIT" style="font-style: normal; padding-right: 15px; margin: 50px;">
     </form>
-   
-</body>
+    
+    </body>
 </html>
