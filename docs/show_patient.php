@@ -1,25 +1,3 @@
-<?php
-//comment out what you don't need
-    # Database Connection
-    $db_conn = mysqli_connect("localhost", "root", "", "medconnect");
-    //$db_conn = mysqli_connect("rdbms.strato.de", "dbu123640", "MouzHIwS23/24paN", "dbs12338865");
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Get the patient ID from the URL parameter
-$patient_id = $_GET['id'];
-
-// Fetch patient data for the specific patient
-$sql = "SELECT * FROM patients WHERE patient_id = $patient_id";
-$result = $conn->query($sql);
-
-// Close the database connection
-$conn->close();
-?>
-
 <!DOCTYPE html>-->
 <html lang="en">
 <head>
@@ -35,50 +13,76 @@ $conn->close();
         </a>
         <!--pages are yet to be created-->
         <nav>
-            <a href="loggedin-temperory.php" class="navbtn">My Profile</a>
-            <a href="contact.html" class="navbtn">My Patients</a>
-            <a href="loginpage.html">
+            <a href="loggedin-temperory.php" class="navbtn">DASHBOARD</a>
+            <a href="logout.php">
               <button type="button" class="custombutton">LOG OUT</button>
             </a>
         </nav>
     </header>
-        
+<?php
+session_start();
 
-    <div>
-        <label for="search">Search:</label>
-        <input type="text" id="search" name="search" oninput="filterOptions()">
-        <button type="submit">Search</button>
-    </div>
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'medconnect';
 
-    <script>
-        // function filterOptions() {
-        //     var input = document.getElementById("search").value.toLowerCase();
-        //     var options = document.getElementById("patient").options;
-        //
-        //     for (var i = 0; i < options.length; i++) {
-        //         var optionText = options[i].text.toLowerCase();
-        //         if (optionText.indexOf(input) > -1) {
-        //             options[i].style.display = "";
-        //         } else {
-        //             options[i].style.display = "none";
-        //         }
-        //     }
-        // }
-    </script>
-    
-    <h1>Patient Details</h1>
-    <?php
-    // Display patient details
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if (mysqli_connect_errno()) {
+    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+
+// Retrieve patient_id from the URL
+$patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : null;
+
+if ($patient_id !== null) {
+    // Fetch patient details based on patient_id
+    $sql = "SELECT * FROM patients WHERE patient_id = $patient_id";
+    $result = $con->query($sql);
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        echo "<p>ID: " . $row['patient_id'] . "</p>";
-        echo "<p>Name: " . $row['patient_name'] . "</p>";
-        echo "<p>Gender: " . $row['gender'] . "</p>";
-        echo "<p>Address: " . $row['address'] . "</p>";
-        echo "<p>Zip Code: " . $row['zipcode'] . "</p>";
-        echo "<p>City: " . $row['city'] . "</p>";
-        echo "<p>Phone: " . $row['phone'] . "</p>";
-        echo "<p>Previous Diseases: " . $row['prevDiseases'] . "</p>";
-        echo "<p>Allergies: " . $row['allergies'] . "</p>";
+
+        // Extract patient details
+        $patient_id = $row['patient_id'];
+        $patient_name = $row['patient_name'];
+        $gender = $row['gender'];
+        $address = $row['address'];
+        $zipcode = $row['zipcode'];
+        $city = $row['city'];
+        $phone = $row['phone'];
+        $prevDiseases = $row['prevDiseases'];
+        $allergies = $row['allergies'];
+        $signsSymptoms = $row['signsSymptoms'];
+        $diagnosis = $row['diagnosis'];
+        $doctor_id = $row['doctor_id'];
+
+        // Display patient details
+        echo "<h1>Patient Details</h1>";
+        echo "<p><strong>Patient ID:</strong> $patient_id</p>";
+        echo "<p><strong>Patient Name:</strong> $patient_name</p>";
+        echo "<p><strong>Gender:</strong> $gender</p>";
+        echo "<p><strong>Address:</strong> $address</p>";
+        echo "<p><strong>Zipcode:</strong> $zipcode</p>";
+        echo "<p><strong>City:</strong> $city</p>";
+        echo "<p><strong>Phone:</strong> $phone</p>";
+        echo "<p><strong>Previous Diseases:</strong> $prevDiseases</p>";
+        echo "<p><strong>Allergies:</strong> $allergies</p>";
+        echo "<p><strong>Signs and Symptoms:</strong> $signsSymptoms</p>";
+        echo "<p><strong>Diagnosis:</strong> $diagnosis</p>";
+        echo "<p><strong>Doctor ID:</strong> $doctor_id</p>";
+
+    } else {
+        echo "Patient not found";
+    }
+} else {
+    echo "Invalid or missing patient ID";
 }
-    ?>
+
+$con->close();
+?>
+<a href="update_patient.html">
+              <button type="button" class="custombutton">Update this data</button>
+            </a>
+</body>
+</html>

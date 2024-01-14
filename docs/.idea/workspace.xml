@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f1b47f8-4119-450b-b299-38cb006ae765" name="Changes" comment="go and check out the page, put new patients and check it out :)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/show_patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/show_patient.php" afterDir="false" />
-    </list>
+    <list default="true" id="4f1b47f8-4119-450b-b299-38cb006ae765" name="Changes" comment="go and check out the page, put new patients and check it out :)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +31,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fwojt/OneDrive - Technische Hochschule Deggendorf/HI/3rd semester/Innovation and Complexity Management/project",
+    "last_opened_file_path": "C:/xampp/htdocs/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,7 +61,9 @@
       <workItem from="1703076502565" duration="97000" />
       <workItem from="1703150181989" duration="1183000" />
       <workItem from="1704920127295" duration="3209000" />
-      <workItem from="1704967224054" duration="3833000" />
+      <workItem from="1704967224054" duration="1580000" />
+      <workItem from="1705243778515" duration="142000" />
+      <workItem from="1705246721833" duration="2417000" />
     </task>
     <task id="LOCAL-00001" summary="removed unnecessary files">
       <option name="closed" value="true" />

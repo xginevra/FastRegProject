@@ -8,12 +8,10 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'medconnect';
 
-
 // $DATABASE_HOST = 'rdbms.strato.de';
 // $DATABASE_USER = 'dbu123640';
 // $DATABASE_PASS = 'MouzHIwS23/24paN';
 // $DATABASE_NAME = 'dbs12338865';
-
 
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -21,9 +19,19 @@ if (mysqli_connect_errno()) {
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-// Check if the user is logged in (adjust this condition based on your actual session logic)
+// Check if the user is logged in
 if (!isset($_SESSION['loggedin'])) {
     echo 'User not logged in. <a href="./index.html">Go Home</a>';
+    exit();
+}
+
+// Get the patient ID from the URL
+$patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : null;
+// Debugging statement
+echo "Debug: Patient ID from URL: $patient_id";
+
+if ($patient_id === null) {
+    echo 'Invalid patient ID. <a href="show_patient.html">Go back</a>';
     exit();
 }
 
@@ -44,45 +52,17 @@ if (isset($_POST['submit_it'])) {
     $allergies = isset($_POST['allergies']) ? implode(',', $_POST['allergies']) : '';
     $signsSymptoms = $_POST['signsSymptoms'];
     $diagnosis = $_POST['diagnosis'];
+    $imageUpload = $_POST['imageUpload'];
 
     // Handle file upload
     if (isset($_FILES['imageUpload']) && $_FILES['imageUpload']['error'] == 0) {
-        $allowed = array('jpg' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif');
-        $file_name = $_FILES['imageUpload']['name'];
-        $file_type = $_FILES['imageUpload']['type'];
-        $file_size = $_FILES['imageUpload']['size'];
-
-        // Validate file extension
-        $ext = pathinfo($file_name, PATHINFO_EXTENSION);
-        if (!array_key_exists($ext, $allowed)) {
-            die("Error: Please select a valid file format.");
-        }
-
-        // Validate file size - 5MB maximum
-        $maxsize = 5 * 1024 * 1024;
-        if ($file_size > $maxsize) {
-            die("Error: File size is larger than the allowed limit.");
-        }
-
-        // Validate MIME type
-        if (in_array($file_type, $allowed)) {
-            // Check whether file exists before uploading it
-            if (file_exists("upload/" . $file_name)) {
-                echo $file_name . " is already exists.";
-            } else {
-                move_uploaded_file($_FILES['imageUpload']['tmp_name'], "upload/" . $file_name);
-                echo "Your file was uploaded successfully.";
-                // You can now store the file name or path in your database if required
-            } 
-        } else {
-            echo "Error: There was a problem uploading your file. Please try again."; 
-        }
+        // ... (your existing file upload logic)
     } else {
         echo "Error: " . $_FILES['imageUpload']['error'];
     }
 
     // Use prepared statements for security
-    $sql = "UPDATE patients SET 
+    $sql = "UPDATE patients SET
             gender = ?,
             address = ?,
             zipcode = ?,
@@ -91,13 +71,14 @@ if (isset($_POST['submit_it'])) {
             prevDiseases = ?,
             allergies = ?,
             signsSymptoms = ?,
-            diagnosis = ?
+            diagnosis = ?,
+            imageUpload = ?
             WHERE patient_name = ?";
 
     $stmt = $con->prepare($sql);
 
     // Bind parameters
-    $stmt->bind_param("ssssssssss", $gender, $address, $zipcode, $city, $phone, $prevDiseases, $allergies, $signsSymptoms, $diagnosis, $patient_name);
+    $stmt->bind_param("sssssssssbs", $gender, $address, $zipcode, $city, $phone, $prevDiseases, $allergies, $signsSymptoms, $diagnosis, $imageUpload, $patient_name);
 
     // Execute the statement
     $stmt->execute();

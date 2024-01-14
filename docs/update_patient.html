@@ -20,17 +20,7 @@
 
     <h1 class="hg4">Update Patient Form</h1>
 
-    <form class="form" action="update_patientdata.php" method="post">
-        
-        <div class="formcolumn">
-        <label for="patients">Choose a patient:</label>
-        <select id="patients" name="patients">
-            <option value="patient1">Patient 1</option>
-            <option value="patient2">Patient 2</option>
-            <option value="patient3">Patient 3</option>
-            <!-- Add more options as needed -->
-        </select>
-    </div>
+    <form class="form" action="update_patientdata.php" method="post" enctype="multipart/form-data">
 
         <!-- Image Upload Field -->
         <div>
@@ -38,12 +28,8 @@
             <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
         </div>
 
-        <div>
-        <label for="fileUpload">Upload files for patient:</label>
-        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .doc, .docx">
-    </div>
         <label for="name">Name:</label>
-        <input class="input1" type="text" id="name" name="name" required><br>
+        <input class="input1" type="text" id="name" name="name"><br>
 
         <p>Gender:</p>
         <input type="radio" id="male" name="gender" value="male">
