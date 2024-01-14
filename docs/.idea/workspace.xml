@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f1b47f8-4119-450b-b299-38cb006ae765" name="Changes" comment="go and check out the page, put new patients and check it out :)">
-      <change afterPath="$PROJECT_DIR$/show_patient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/show_patient.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/submit_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/submit_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update_patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/update_patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update_patientdata.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_patientdata.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show_patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/show_patient.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fwojt/OneDrive - Technische Hochschule Deggendorf/HI/3rd semester/Innovation and Complexity Management/measlesdata",
+    "last_opened_file_path": "C:/Users/fwojt/OneDrive - Technische Hochschule Deggendorf/HI/3rd semester/Innovation and Complexity Management/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,7 +64,7 @@
       <workItem from="1703076502565" duration="97000" />
       <workItem from="1703150181989" duration="1183000" />
       <workItem from="1704920127295" duration="3209000" />
-      <workItem from="1704967224054" duration="2893000" />
+      <workItem from="1704967224054" duration="3833000" />
     </task>
     <task id="LOCAL-00001" summary="removed unnecessary files">
       <option name="closed" value="true" />

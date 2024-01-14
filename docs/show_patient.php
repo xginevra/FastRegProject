@@ -80,7 +80,5 @@ $conn->close();
         echo "<p>Phone: " . $row['phone'] . "</p>";
         echo "<p>Previous Diseases: " . $row['prevDiseases'] . "</p>";
         echo "<p>Allergies: " . $row['allergies'] . "</p>";
-   
-    </body>
-    </html>
+}
     ?>
