@@ -1,4 +1,4 @@
-<!DOCTYPE html>-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,8 +81,5 @@ if ($patient_id !== null) {
 
 $con->close();
 ?>
-<a href="update_patient.html">
-              <button type="button" class="custombutton">Update this data</button>
-            </a>
 </body>
 </html>
