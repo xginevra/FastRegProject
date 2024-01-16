@@ -6,8 +6,6 @@ By Paniz, Paya, Ali, Franzi
 
 ## Don't forget pulling before working on some pages
 
-page "update_patient" and "show_patient" want to be redesigned
-
 ---------
 
 First, all user-related pages should be a .php file in order to place the following snippet of code at the beginning:
@@ -45,9 +43,9 @@ This is doctors:
 |   |   |   |   |   |   |   |
 
 This is patients:
-|  patient_id | patient_name  | gender  | address  | zipcode  | city  | phone  | prevDiseases  | allergies  |  signsSymptoms |  diagnosis |  doctor_id |   imageUpload   | 
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |   |   |   |   |   |
+|  patient_id | patient_name  | gender  | address  | zipcode  | city  | phone  | prevDiseases  | allergies  |  signsSymptoms |  diagnosis |  doctor_id |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |   |   |   |   |
 
 -------
 
@@ -56,13 +54,9 @@ however, for some reason at the register.html we used u_username and all the oth
 ----------
 
 ### Our page looks amazing.
-but still, we have something to do:
-
-- restyling for some pages mentioned at the top (show and update patient data) -> <strong> Frontend </strong>
-- make the image upload work -> <strong> Backend </strong>
 
 
-
+yes, it is amazing! :)
 ----------------------
 
 ## Backend todo:
