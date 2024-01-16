@@ -35,6 +35,23 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
+    // Extract patient details
+    $patient_id = $row['patient_id'];
+    $patient_name = $row['patient_name'];
+    $gender = $row['gender'];
+    $address = $row['address'];
+    $zipcode = $row['zipcode'];
+    $city = $row['city'];
+    $phone = $row['phone'];
+    $prevDiseases = $row['prevDiseases'];
+    $allergies = $row['allergies'];
+    $signsSymptoms = $row['signsSymptoms'];
+    $diagnosis = $row['diagnosis'];
+    $doctor_id = $row['doctor_id'];
+
+    // The fetched values are stored in the corresponding variables
+
+
     // Check if the form is submitted for updating patient data
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_it'])) {
         // Initialize arrays to store update values and their corresponding types
@@ -42,21 +59,25 @@ if ($result->num_rows > 0) {
         $updateTypes = "";
 
         // Retrieve updated data from the form
-        $fieldsToUpdate = array('patient_name', 'gender', 'address', 'zipcode', 'city', 'phone', 'signsSymptoms', 'diagnosis');
+$fieldsToUpdate = array('patient_name', 'gender', 'address', 'zipcode', 'city', 'phone', 'signsSymptoms', 'diagnosis', 'allergies');
 
-        foreach ($fieldsToUpdate as $field) {
-            if (isset($_POST[$field])) {
-                // For checkboxes, check if it's an array and implode it into a string
-                $updateValues[$field] = is_array($_POST[$field]) ? implode(', ', $_POST[$field]) : $_POST[$field];
-
-                // Determine the type based on the field
-                if (in_array($field, array('zipcode', 'phone', 'patient_id', 'doctor_id'), true)) {
-                    $updateTypes .= 'i'; // Integer
-                } else {
-                    $updateTypes .= 's'; // String
-                }
-            }
+foreach ($fieldsToUpdate as $field) {
+    if (isset($_POST[$field])) {
+        // For checkboxes, check if it's an array and implode it into a string
+        if ($field === 'allergies') {
+            $updateValues[$field] = implode(', ', $_POST[$field]);
+        } else {
+            $updateValues[$field] = $_POST[$field];
         }
+
+        // Determine the type based on the field
+        if (in_array($field, array('zipcode', 'phone', 'patient_id', 'doctor_id'), true)) {
+            $updateTypes .= 'i'; // Integer
+        } else {
+            $updateTypes .= 's'; // String
+        }
+    }
+}
 
 
         // Use the UPDATE statement with dynamically generated SET clause

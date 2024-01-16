@@ -8,24 +8,18 @@
 </head>
 <body>
     <header>
-        <a href="index.html" >
+        <a href="index.html">
             <object data="Logo.svg" height="20vh" style="margin-top: 5vh; margin-left: 6vh;"> </object>
         </a>
         <nav>
-            <a href="loggedin-temperory.php" class="navbtn">DASHBOARD</a>
-            <a href="logout.php">
-              <button type="button" class="custombutton">LOG OUT</button>
-            </a>
+            <a href="loggedin-temperory.php" class="navbtn">My Profile</a>
+            <a href="contact.html" class="navbtn">My Patients</a>
+            <a href="logout.php" class="navbtn" style="margin-right: 13vh; margin-top: 5vh;">LOGOUT</a>
         </nav>
     </header>
 
     <?php
         session_start();
-
-        $DATABASE_HOST = 'rdbms.strato.de';
-        $DATABASE_USER = 'dbu123640';
-        $DATABASE_PASS = 'MouzHIwS23/24paN';
-        $DATABASE_NAME = 'dbs12338865';
 
         $DATABASE_HOST = 'localhost';
         $DATABASE_USER = 'root';
@@ -62,20 +56,20 @@
                 $diagnosis = $row['diagnosis'];
                 $doctor_id = $row['doctor_id'];
 
-//                 // Display patient details
-//                 echo "<h1>Patient Details</h1>";
-//                 echo "<p><strong>Patient ID:</strong> $patient_id</p>";
-//                 echo "<p><strong>Patient Name:</strong> $patient_name</p>";
-//                 echo "<p><strong>Gender:</strong> $gender</p>";
-//                 echo "<p><strong>Address:</strong> $address</p>";
-//                 echo "<p><strong>Zipcode:</strong> $zipcode</p>";
-//                 echo "<p><strong>City:</strong> $city</p>";
-//                 echo "<p><strong>Phone:</strong> $phone</p>";
-//                 echo "<p><strong>Previous Diseases:</strong> $prevDiseases</p>";
-//                 echo "<p><strong>Allergies:</strong> $allergies</p>";
-//                 echo "<p><strong>Signs and Symptoms:</strong> $signsSymptoms</p>";
-//                 echo "<p><strong>Diagnosis:</strong> $diagnosis</p>";
-//                 echo "<p><strong>Doctor ID:</strong> $doctor_id</p>";
+                // Display patient details
+                echo "<h1>Patient Details</h1>";
+                echo "<p><strong>Patient ID:</strong> $patient_id</p>";
+                echo "<p><strong>Patient Name:</strong> $patient_name</p>";
+                echo "<p><strong>Gender:</strong> $gender</p>";
+                echo "<p><strong>Address:</strong> $address</p>";
+                echo "<p><strong>Zipcode:</strong> $zipcode</p>";
+                echo "<p><strong>City:</strong> $city</p>";
+                echo "<p><strong>Phone:</strong> $phone</p>";
+                echo "<p><strong>Previous Diseases:</strong> $prevDiseases</p>";
+                echo "<p><strong>Allergies:</strong> $allergies</p>";
+                echo "<p><strong>Signs and Symptoms:</strong> $signsSymptoms</p>";
+                echo "<p><strong>Diagnosis:</strong> $diagnosis</p>";
+                echo "<p><strong>Doctor ID:</strong> $doctor_id</p>";
             } else {
                 echo "Patient not found";
             }
@@ -121,8 +115,5 @@
         <p class="output"><?php echo $allergies; ?></p>
 
     </div>
-</body>
-</html>
-
 </body>
 </html>

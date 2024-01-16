@@ -39,7 +39,7 @@ if (isset($_POST['submit_it'])) {
     $phone = $_POST['phone'];
     $prevDiseases = $_POST['prevDiseases'];
     $allergies = '';
-    $signsSymptoms = $_POST['signsSymptoms']
+    $signsSymptoms = $_POST['signsSymptoms'];
 
     // Check if allergies are set in the form
     if (isset($_POST['allergies'])) {

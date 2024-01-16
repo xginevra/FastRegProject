@@ -7,6 +7,7 @@
     <title>Update Patient</title>
 </head>
 <body>
+ <?php include('update_patientdata.php'); ?>
 <header>
     <a href="index.html">
         <object data="Logo.svg" height="20vh" style="margin-top: 5vh; margin-left: 6vh;"> </object>
@@ -28,7 +29,7 @@
         </div>
 
         <label class="labelline" style="margin-right: 50px;" for="name">Name:</label><br>
-        <input class="input1" style="margin-top: 20px;" type="text" id="name" name="name"><br>
+        <input class="input1" style="margin-top: 20px;" type="text" id="name" name="name" value=" <?php echo $row['patient_name']; ?> "><br>
 
         <div class="labelline">Gender:</p>
         <input type="radio" id="male" name="gender" value="male">
@@ -44,31 +45,31 @@
         <br>
 
         <label for="address">Address:</label><br>
-        <input style="margin-left: -8px; margin-top: 20px; margin-bottom: 20px;" type="text" id="address" name="address"><br>
+        <input style="margin-left: -8px; margin-top: 20px; margin-bottom: 20px;" type="text" id="address" name="address" value=" <?php echo $row['address']; ?> "><br>
 
         <label for="zipcode">Zipcode:</label><br>
-        <input style="margin-left: -8px; margin-top: 20px; margin-bottom: 20px;" type="text" id="zipcode" name="zipcode"><br>
+        <input style="margin-left: -8px; margin-top: 20px; margin-bottom: 20px;" type="text" id="zipcode" name="zipcode" value=" <?php echo $row['zipcode']; ?> "><br>
 
         <label for="city">City:</label><br>
-        <input style="margin-top: 20px; margin-left: -8px; margin-bottom: 20px;" type="text" id="city" name="city"><br>
+        <input style="margin-top: 20px; margin-left: -8px; margin-bottom: 20px;" type="text" id="city" name="city" value=" <?php echo $row['city']; ?> "><br>
 
         <label for="phone">Phone:</label><br>
-        <input style="margin-top: 20px; margin-left: 20px; margin-left: -8px;" type="tel" id="phone" name="phone"><br>
+        <input style="margin-top: 20px; margin-left: 20px; margin-left: -8px;" type="tel" id="phone" name="phone" value=" <?php echo $row['phone']; ?> "><br>
 
         <br>
 
         <label>Known Allergies:</label><br>
-        <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts">
-        <label for="allergy1">Peanuts</label><br>
+        <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts" <?php echo (in_array('Peanuts', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <label for="allergy1">Peanuts</label>
 
-        <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish">
-        <label for="allergy2">Shellfish</label><br>
+        <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish" <?php echo (in_array('Shellfish', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <label for="allergy2">Shellfish</label>
 
-        <input type="checkbox" id="allergy3" name="allergies[]" value="Pollen">
-        <label for="allergy3">Pollen</label><br>
+        <input type="checkbox" id="allergy3" name="allergies[]" value="Pollen" <?php echo (in_array('Pollen', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <label for="allergy3">Pollen</label>
 
-        <input type="checkbox" id="allergy4" name="allergies[]" value="No known allergy">
-        <label for="allergy4">No known allergy</label><br>
+        <input type="checkbox" id="allergy4" name="allergies[]" value="No known allergy"  <?php echo (in_array('No known allergy', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <label for="allergy4">No known allergy</label>
     <div style="margin-top: 20px;">
         <label for="signsSymptoms">Patient's signs and symptoms:</label><br>
     <textarea  style="margin-left: -8px;" class="input2" id="signsSymptoms" name="signsSymptoms" rows="4" cols="40"

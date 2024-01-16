@@ -389,7 +389,7 @@ select.inputboxname:focus {
     color: transparent;
     text-shadow: 0 0 0 #000;
   }
-  
+
 select:hover{
     box-shadow: rgba(0, 0, 0, 0);
 }
@@ -477,7 +477,7 @@ select:hover{
 
 .list-item{
     color: #828282;
-    font-size: 0.75vw; 
+    font-size: 0.75vw;
     margin-left: 20px;
 }
 
@@ -572,7 +572,7 @@ textarea {
     overflow: hidden;
 }
 
-  
+
   #myTable {
     width: 60%;
     height: 50px;
@@ -584,14 +584,14 @@ textarea {
     border-spacing: 0;
     color: #cdcdcd;
     overflow: hidden;
-    
+
   }
 
   #myTable th, #myTable td {
     text-align: left;
     padding: 10px;
   }
-  
+
   #mytable tr.header {
     background-color: #585858;
   }
@@ -617,8 +617,6 @@ textarea {
     width: 456px;
     height: 100px;
     border-color: #4f4f4f;
-    overflow-y: scroll;
-    padding: 10px;
   }
 
   #fileUpload {
@@ -673,7 +671,17 @@ textarea {
     background-color: #b1b1b1;
     font-weight: 300;
 }
-  
 
 
+.output {
+    background-color: #354e3e;
+    border-radius: 10px;
+    color: #cdcdcd;
+    margin-left: 3.2vw;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 850px;
+    height: 60px;
+    border: 1px solid #bebdbd;
+  }
   
