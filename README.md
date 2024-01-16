@@ -10,6 +10,9 @@ By Paniz, Paya, Ali, Franzi
 Guys, thank you. <3
 ---------
 
+
+you find an sql file with the database in the repo.
+
 First, all user-related pages should be a .php file in order to place the following snippet of code at the beginning:
  ```
   <?php 
