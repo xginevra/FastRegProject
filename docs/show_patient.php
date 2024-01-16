@@ -119,6 +119,10 @@
         </div>
         <div class="labelline">Known Allergies:</div>
         <p class="output"><?php echo $allergies; ?></p>
+        <div class="labelline">Diagnosis:</div>
+        <p class="output"><?php echo $diagnosis; ?></p>
+
+    </div>
 
     </div>
 </body>
