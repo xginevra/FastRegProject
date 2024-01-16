@@ -6,6 +6,8 @@ By Paniz, Paya, Ali, Franzi
 
 ## Don't forget pulling before working on some pages
 
+
+Guys, thank you. <3
 ---------
 
 First, all user-related pages should be a .php file in order to place the following snippet of code at the beginning:
@@ -59,7 +61,4 @@ however, for some reason at the register.html we used u_username and all the oth
 yes, it is amazing! :)
 ----------------------
 
-## Backend todo:
-- figure out how to update patient data in the same table -> kinda messed it up
-- how to set the relationships (one doctor can have many patients, one patient has only one doctor); i want to make a patient only accessible for the doctor who created the patient's data (Datenschutz! :D) - Check!
-- how to save pictures and other files in a table (?)
+we didn't put every extra thing, but it works perfectly fine.
