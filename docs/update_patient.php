@@ -29,7 +29,7 @@
         </div>
 
         <label class="labelline" style="margin-right: 50px;" for="name">Name:</label><br>
-        <input class="input1" style="margin-top: 20px;" type="text" id="name" name="name" value=" <?php echo $row['patient_name']; ?> "><br>
+        <input class="input1" style="margin-top: 20px;" type="text" id="name" name="patient_name" value=" <?php echo $row['patient_name']; ?> "><br>
 
         <div class="labelline">Gender:</p>
         <input type="radio" id="male" name="gender" value="male">
@@ -59,13 +59,13 @@
         <br>
 
         <label>Known Allergies:</label><br>
-        <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts" <?php echo (in_array('Peanuts', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <input type="checkbox" id="allergy1" name="allergies[]" value="Peanuts" <?php echo (in_array('Peanuts', array_map('trim', explode(', ', $allergies)))) ? 'checked' : ''; ?>>
         <label for="allergy1">Peanuts</label>
 
-        <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish" <?php echo (in_array('Shellfish', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <input type="checkbox" id="allergy2" name="allergies[]" value="Shellfish" <?php echo (in_array('Shellfish', array_map('trim', explode(', ', $allergies)))) ? 'checked' : ''; ?>>
         <label for="allergy2">Shellfish</label>
 
-        <input type="checkbox" id="allergy3" name="allergies[]" value="Pollen" <?php echo (in_array('Pollen', explode(', ', $allergies))) ? 'checked' : ''; ?>>
+        <input type="checkbox" id="allergy2" name="allergies[]" value="Pollen" <?php echo (in_array('Pollen', array_map('trim', explode(', ', $allergies)))) ? 'checked' : ''; ?>>
         <label for="allergy3">Pollen</label>
 
         <input type="checkbox" id="allergy4" name="allergies[]" value="No known allergy"  <?php echo (in_array('No known allergy', explode(', ', $allergies))) ? 'checked' : ''; ?>>
